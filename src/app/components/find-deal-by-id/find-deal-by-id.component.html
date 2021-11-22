@@ -1,0 +1,29 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="input-group mb-3">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Deal ID"
+        aria-label="Deal Id"
+        aria-describedby="basic-addon2"
+        #id
+      />
+      <div class="input-group-append">
+        <button class="btn btn-primary" type="button" (click)="getOneById(id.value)">Button</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container text-center mt-4" *ngIf="deal != null">
+  <div class="card">
+    <div class="card-header">{{ deal.id }}</div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">{{ deal.fromCurrencyISO }}</li>
+      <li class="list-group-item">{{ deal.toCurrencyISO }}</li>
+      <li class="list-group-item">{{ deal.dealTimestamp  }}</li>
+      <li class="list-group-item">{{ deal.amount }}</li>
+    </ul>
+  </div>
+</div>
